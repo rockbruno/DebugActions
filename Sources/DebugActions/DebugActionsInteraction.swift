@@ -27,7 +27,7 @@ extension DebugActionsInteraction {
             _ interaction: UIContextMenuInteraction,
             configurationForMenuAtLocation location: CGPoint
         ) -> UIContextMenuConfiguration? {
-            let debugActions = debugDelegate?.debugMenuElements() ?? []
+            let debugActions = debugDelegate?.debugActions() ?? []
             guard debugActions.isEmpty == false else {
                 return nil
             }
