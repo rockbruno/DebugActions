@@ -56,11 +56,13 @@ func serverInformation() -> UIMenuElement {
 
 This results in a menu element with a loading indicator that is replaced with the final actions once the completion handler is called.
 
+![DebugActions Async](https://github.com/rockbruno/DebugActions/raw/master/Metadata/async.png "DebugActions")
+
 ## Installation
 
 ### Swift Package Manager
 
-`.package(url: "https://github.com/rockbruno/DebugActions", .upToNextMinor(from: "0.1.0"))`
+`.package(url: "https://github.com/rockbruno/DebugActions", .upToNextMinor(from: "0.2.0"))`
 
 ### CocoaPods
 
