@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name = 'DebugActions'
   s.module_name = 'DebugActions'
-  s.version = '0.1.0'
+  s.version = '0.2.0'
   s.license = { type: 'MIT', file: 'LICENSE' }
   s.summary = 'Enchance UIViews with special debugging menus.'
   s.homepage = 'https://github.com/rockbruno/DebugActions'
