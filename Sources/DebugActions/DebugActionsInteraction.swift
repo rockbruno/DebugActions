@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 public protocol DebugActionsInteractionDelegate: AnyObject {
-    func debugActions() -> [DebugAction]
+    func debugActions() -> [UIMenuElement]
 }
 
 public final class DebugActionsInteraction: UIContextMenuInteraction {
@@ -27,18 +27,15 @@ extension DebugActionsInteraction {
             _ interaction: UIContextMenuInteraction,
             configurationForMenuAtLocation location: CGPoint
         ) -> UIContextMenuConfiguration? {
-            let debugActions: [DebugAction] = debugDelegate?.debugActions() ?? []
+            let debugActions = debugDelegate?.debugMenuElements() ?? []
             guard debugActions.isEmpty == false else {
                 return nil
-            }
-            let actions: [UIAction] = debugActions.map {
-                return UIAction(title: $0.title, handler: $0.handler)
             }
             return UIContextMenuConfiguration(
                 identifier: DebugActionsInteraction.identifier,
                 previewProvider: nil
             ) { _ in
-                return UIMenu(title: Self.title, children: actions)
+                return UIMenu(title: Self.title, children: debugActions)
             }
         }
     }
